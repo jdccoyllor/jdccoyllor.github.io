@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Jdccoyllor | Pronto</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="llegamos pronto" />
+    <meta name="author" content="Jdccoyllor" />
+
+    <!-- Mobile view -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/fav-icon.ico" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="js/bootstrap/bootstrap.min.css"
+    />
+
+    <!-- Template's stylesheets -->
+    <link rel="stylesheet" href="css/theme-default.css" type="text/css" />
+
+    <link rel="stylesheet" href="js/countdown-timers/flipclock.css" />
+    <!-- Template's stylesheets END -->
+    <style>
+      .clock-container {
+        width: 700px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="sec-padding clearfix">
+      <div class="container">
+        <div class="text text-center">
+          <h2 class="uppercase title">¡LLEGAMOS PRONTO!</h2>
+          <h6 class="uppercase sub-title">
+            Estamos trabajando duro para traerte una nueva experiencia.
+          </h6>
+        </div>
+        <div class="clock-container">
+          <div class="clock"></div>
+          <!--end timer-->
+        </div>
+      </div>
+    </section>
+    <!--end section-->
+    <!--end site wrapper-->
+    <!--end wrapper boxed-->
+
+    <!-- Scripts -->
+    <script src="js/jquery/jquery.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Template scripts -->
+    <script src="js/countdown-timers/flipclock.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Fecha objetivo: 19 de mayo de 2024
+        var targetDate = new Date("2024-05-19T00:00:00");
+        // Fecha actual
+        var currentDate = new Date();
+
+        // Calcula la diferencia en milisegundos entre la fecha objetivo y la fecha actual
+        var diffMilliseconds = targetDate - currentDate;
+
+        // Convierte la diferencia a segundos y luego inicializa el contador FlipClock con ese valor
+        var diffSeconds = Math.floor(diffMilliseconds / 1000);
+        var clock = $(".clock").FlipClock(diffSeconds, {
+          clockFace: "DailyCounter",
+          countdown: true,
+          language: "es",
+        });
+      });
+    </script>
+  </body>
+</html>
